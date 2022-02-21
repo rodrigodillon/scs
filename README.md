@@ -71,9 +71,9 @@ Foram incluídas dependências no projeto para que sejam geradas de forma autom�
 
 ### open-api-specification
 
-http://localhost:8080/scs-backend/v3/api-docs
-http://localhost:8080/scs-backend/v3/api-docs.yaml
+- http://localhost:8080/scs-backend/v3/api-docs
+- http://localhost:8080/scs-backend/v3/api-docs.yaml
 
 ### swagger-ui
 
-http://localhost:8080/scs-backend/swagger-ui.html
+- http://localhost:8080/scs-backend/swagger-ui.html
