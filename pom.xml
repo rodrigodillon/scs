@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.scs</groupId>
-	<artifactId>backend</artifactId>
+	<artifactId>scs-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<name>api</name>
 	<description>Sistema de controle de senhas</description>
 	<properties>
@@ -66,6 +66,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>${artifactId}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
