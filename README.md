@@ -6,7 +6,7 @@ Todas as funcionalidades serão acessadas utilizando endpoints REST, variando en
 
 # Banco de Dados
 
-Para armazenamento dos dados foi utilizando banco de dados PostgreSQL (14.2). Segue abaixo as tabelas construídas.:
+Para armazenamento dos dados foi utilizando sistema gerenciador de banco de dados PostgreSQL (14.2). É preciso criar um novo banco de dados (scs). Segue abaixo as tabelas que serão criadas, de forma automática, no startup da aplicação. 
 
 ## SENHA
 
@@ -41,6 +41,5 @@ Exemplo:
 | 1 | 35 | 7 |
 
 * Nesta tabela deve existir apenas UMA linha.
-** A criação das tabelas é feita de forma automática ao subir a aplicação (spring.jpa.hibernate.ddl-auto=update)
 
 
