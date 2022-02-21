@@ -4,11 +4,11 @@ API para controle de senhas que serão geradas por usuários "normais" e que ser
 
 Todas as funcionalidades serão acessadas utilizando endpoints REST, variando entre métodos GET e POST.
 
-# Banco de Dados
+## Banco de Dados
 
 Para armazenamento dos dados foi utilizando sistema gerenciador de banco de dados PostgreSQL (14.2). É preciso criar um novo banco de dados (scs). Segue abaixo as tabelas que serão criadas, de forma automática (no schema public), no startup da aplicação. 
 
-## SENHA
+### SENHA
 
 Conjunto de entidades representando todas as senhas que foram geradas pelos usuários, bem como as que já foram "chamadas" pelos usuários gerentes.
 
@@ -35,7 +35,7 @@ Exemplo:
 | 4 | P0001 | 2022-02-18 17:02:10 | 2022-02-18 17:02:15 | PREFERENCIAL | CONCLUIDO |
 | 5 | N0004 | 2022-02-18 17:03:00 | null | NORMAL | PENDENTE |
 
-## SENHA_CONTROLE
+### SENHA_CONTROLE
 
 Tabela de controle dos contadores das senhas normais e preferenciais. A existencia dessa tabela possibilita que os contadores sejam reinicializados, além de servir de referencia para a geração da próxima senha. Isso evita que uma nova geração de senha envolva a consulta de todas as senhas já geradas para o calculo do próximo número.
 
@@ -57,4 +57,23 @@ Exemplo:
 
 * Nesta tabela deve existir apenas UMA linha.
 
+## Build
 
+O projeto utiliza POM.xml para descrição das suas propriedades, por tanto um simples "msn clean install" já faz todo o build da aplicação, com a geração do .war (/target/) e a execução de testes unitários.
+
+## Deploy
+
+O artefato resultado da compilação é o arquivo /target/scs-backend.war. O deploy no Tomcat pode ser feito copiando este arquivo para TOMCAT_HOME/webapps/. Se o seu Tomcat estivar com as configurações padrão, copiando o arquivo para a pasta já irá disparar o hot deploy.
+
+## API
+
+Foram incluídas dependências no projeto para que sejam geradas de forma automática a especificação dos endpoints, bem como a interface do Swagger UI para validação dos serviços.
+
+### open-api-specification
+
+http://localhost:8080/scs-backend/v3/api-docs
+http://localhost:8080/scs-backend/v3/api-docs.yaml
+
+### swagger-ui
+
+http://localhost:8080/scs-backend/swagger-ui.html
