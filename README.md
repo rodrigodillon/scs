@@ -4,6 +4,32 @@ API para controle de senhas que serão geradas por usuários "normais" e que ser
 
 Todas as funcionalidades serão acessadas utilizando endpoints REST, variando entre métodos GET e POST.
 
+## Pré-requisitos
+
+* Tomcat 9
+* PostgreSQL 14
+* Java 11
+* Maven
+
+## Tomcat
+
+Incluir o filtro abaixo para desativar CORS (Cross-origin resource sharing) no TOMCAT_HOME/conf/web.xml
+
+```
+<filter>
+       <filter-name>CorsFilter</filter-name>
+       <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+	   <init-param>
+			<param-name>cors.allowed.origins</param-name>
+			<param-value>http://localhost:3000</param-value>
+	   </init-param>
+  </filter>
+     <filter-mapping>
+       <filter-name>CorsFilter</filter-name>
+       <url-pattern>/*</url-pattern>
+     </filter-mapping>
+```
+     
 ## Banco de Dados
 
 Para armazenamento dos dados foi utilizando sistema gerenciador de banco de dados PostgreSQL (14.2). É preciso criar um novo banco de dados (scs). Segue abaixo as tabelas que serão criadas, de forma automática (no schema public), no startup da aplicação. 
